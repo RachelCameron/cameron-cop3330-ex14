@@ -12,12 +12,14 @@ public class exercise14 {
         double orderamount = input.nextDouble();
         System.out.println("What is the state?");
         String state = input.next();
-        double tax = .055;
-        if(state.equalsIgnoreCase("WI")){
+        final double tax = .055;
+        if(state.equalsIgnoreCase("WI")) {
             System.out.printf("The subtotal is $%.2f\n", orderamount);
-            System.out.printf("The tax is $%.2f\n", tax);
+            System.out.printf("The tax is $%.2f\n", orderamount * tax);
+            System.out.printf("The total is $%.2f\n", orderamount + (orderamount * tax));
+            return;
         }
         double total = orderamount + tax;
-        System.out.printf("The total is $%.2f\n", total);
+        System.out.printf("The total is $%.2f\n", orderamount);
     }
 }
